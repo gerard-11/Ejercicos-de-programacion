@@ -1,0 +1,14 @@
+*{
+    padding: ´0;
+    width: 0;
+}
+main {
+    background-color: blue;
+    width: 100%;
+    height: 500px ;
+    
+}
+
+p {
+    font-size: 16 px;
+}

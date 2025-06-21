@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Contactos</title>
+</head>
+<body>
+
+<script>
+ const listaFamilia = [];//libreta donde vamos a guardar los contactos
+const listaTrabajo=[];
+let listaActual;// variable que va a cambiar en funcion de lo que el usuario elija
+// que opreaciones tengo que dividir o repetir ?
+// al inciar el programa llamo una ventana con opciones y al alegir una llamo una funcion
+
+
+    function seleccionarLista() {
+  const selectList = prompt(
+    "¿Con qué lista quieres trabajar?\n1. Familia\n2. Trabajo"
+  );
+
+  if (selectList === "1") {
+    listaActual = listaFamilia;
+    alert("Trabajando con lista de Familia");
+  } else if (selectList === "2") {
+    listaActual = listaTrabajo;
+    alert("Trabajando con lista de Trabajo");
+  } else {
+    alert("Opción inválida. Se seleccionará Familia por defecto.");
+    listaActual = listaFamilia;
+  }
+}
+  
+
+  function mostrarMenu() {
+    let opcion;
+// hacer mientras// le damos valor a la variable (opcion) por medio de un prompt
+    do {
+      opcion = prompt(
+        "¿Qué deseas hacer?\n" +
+        "1 - Agregar contacto\n" +
+        "2 - Eliminar contacto\n" +
+        "3 - Listar contactos\n" +
+        "4 - Seleccionar Lista para trabajar\n"+
+        "5 - Salir"
+      );
+
+      switch(opcion) { // eliges que quieres hacer y te manda a una funcion
+        case "1":
+          agregarContacto();
+          break;
+        case "2":
+          eliminarContacto();
+          break;
+        case "3":
+          listarContactos();
+          break;
+          case "4":
+          seleccionarLista();
+          break;
+        case "5":
+          alert("¡Adiós!");
+          break;
+        default:
+          alert("Opción no válida");
+      }
+    } while (opcion !== "5");// (while sigue con true y para con false )do.... while (hacer mientras)    (!==)si opcion no es diferente de  4 osea es igual a 4,(verdad) se vuelve false y para el bucle
+  }                          // (mientras opcion y 4 no sea verdadero sigue el bucle o sea si devuelve false sigue ) (true) 
+
+  function agregarContacto() {
+    const nombre = prompt("Ingrese el nombre del contacto:");
+    const telefono = prompt("Ingrese el número de teléfono:");
+    const direccion= prompt(" ingrese su direcion");
+    listaActual.push({ nombre, telefono,direccion }); //metodo .push crea objetos dentro del array por medio del prompt (ampliar arrays)
+    alert("Contacto agregado con éxito.");// en este caso 2 key/value( nombre y telefono)  al array contactos
+  }    
+    // declaro la funcion para encapsular la logica 
+      //verificar si hay contactos, si no hay nada el el array (length) no tiene sentido seguir
+  function eliminarContacto() { 
+    if (listaActual.length === 0) { 
+      alert("No hay contactos para eliminar.");
+      return; //regresas a ver si ya hay algo
+    }
+
+    let lista = "Lista de contactos:\n";
+    listaActual.forEach((contacto, index) => {   //  ejecuta una funcion por cada elemento del array y devuelve el valor del array 
+      lista += `${index + 1}. ${contacto.nombre} - ${contacto.telefono} Direccion: ${contacto.direccion}\n`; //muestra la lista de contactos que el forEach encontro
+    });
+
+    const seleccion = prompt(lista + "\nEscribe el número del contacto que quieres eliminar:");
+    const indice = parseInt(seleccion) - 1;
+
+    if (!isNaN(indice) && indice >= 0 && indice < listaActual.length) { //si(indice) si es un numero y tambien indice es >= 0 && indice menos a numero de elemtnos del array
+      const eliminado = listaActual.splice(indice, 1); //haz la funcion de eliminar ( indice) en funcion de indice [cantidad d a eliminar1]
+      alert(`Contacto "${eliminado[0].nombre}" eliminado.`);// indice[0+ cantidada de elentos a eliminar 1]
+    } else {
+      alert("Número inválido.");
+    }
+  }
+
+  function listarContactos() { // voy a recorrer el array y mostrar el contacto con su informacion
+    if (listaActual.length === 0) {
+      alert("No hay contactos.");
+      return;
+    }
+
+    let lista = "Tus contactos:\n";
+    listaActual.forEach((contacto, index) => {
+      lista += `${index + 1}. ${contacto.nombre} - ${contacto.telefono}- ${contacto.direccion}\n`;
+    });
+    alert(lista);
+  }
+
+  // Inicia el programa
+  seleccionarLista();
+  mostrarMenu();
+</script>
+
+</body>
+</html>

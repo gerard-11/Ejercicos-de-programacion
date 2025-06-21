@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+body {
+      background-color: #ec8585;        /* Color de fondo suave */
+      height: 100vh;                    /* Ocupa toda la altura de la pantalla */
+      display: flex;                    /* Flexbox para centrar */
+      justify-content: center;          /* Centra horizontalmente */
+      align-items: center;              /* Centra verticalmente */
+      margin: 0;                        /* Quita el margen por defecto del body */
+    }
+
+main{
+      background-color: white;          /* Fondo blanco para parecer una tarjeta */
+      padding: 20px;                    /* Espacio interno */
+      border-radius: 10px;              /* Bordes redondeados */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+      max-width: 400px;                 /* Ancho máximo */
+      width: 100%;                      /* Se adapta al ancho disponible */
+}
+header {
+      text-align: center;               /* Centra el texto del header */
+      font-size: 24px;                  /* Tamaño grande para destacar */
+      font-weight: bold;               /* Texto en negrita */
+      margin-bottom: 60px;              /* Espacio con respecto al texto de abajo */
+    }
+
+    header p{
+    align-items: center;
+    width: 184px;
+    background-color: chocolate;
+    display: flex;
+    flex-direction: column;
+    margin-left: 90px;
+    border-radius: 12px;
+    }
+.img { 
+    display: block;         /* La convierte en bloque */
+    margin: 0 auto;         /* Centra horizontalmente */
+    max-width: 75%;        /* Se adapta al ancho disponible */
+    height: auto;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+.contenido{
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    background-color: lightcoral;
+    border-radius: 27px;
+    padding: 16px;
+}

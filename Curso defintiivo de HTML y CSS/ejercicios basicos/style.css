@@ -1,0 +1,33 @@
+/*centrado de elementos tipo inline tetx*/
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;}
+
+body{
+ font-size: 4rem;
+ text-align: center;
+ position:relative;
+}
+
+/*centrado de elementos tipo img*/
+#imgcentrar{
+    display: block;
+    margin:0 auto;
+}
+.absolute{
+    position:absolute;
+   
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+/*Crea un div con position: absolute.
+Usa top, left, y transform: translate(-50%, -50%) para centrarlo 
+respecto a un contenedor padre con position: relative.*/

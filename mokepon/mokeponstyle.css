@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
+body{
+    font-family: "Turret Road", sans-serif;
+    background-image: url(".js/imgmoke/patio\ de\ mascotas.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: yellow;
+}
+
+#seleccionar-mascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.titulo{
+    color:lightyellow;
+    width: 100%;
+    max-width: 350px;
+    height: 51px;
+    background-color:orange;
+    border-radius: 15px;
+    padding: 12px; 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px;
+    text-align: center;
+    
+}
+.subtitulo{
+    color:#FF9F00;
+}
+
+.tarjetas, .tarjetas-ataques{
+    display:flex;
+    gap:10px;
+}
+
+
+.tarjeta-de-mokepon{
+  width: 175px;
+  height: 85px;
+  background:#A4B465;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0) ;
+  margin-right: 40px;
+  
+}
+    
+
+.tarjeta-de-mokepon img{
+    width: 85px;
+    margin:8px;
+    border-radius: 15px;
+    border-left: 2px;
+    
+}
+
+
+#boton-mascota{
+    width: 150px;
+    height: 55px;
+    background: #73946B;
+    padding: 5px;
+    box-sizing: border-box;
+    display: block;
+    margin: 20px auto;
+    border: 3px groove rgb(255, 255, 255);
+    border-radius: 15px;
+    color:rgb(255, 255, 255);
+    font-family: "Turret Road", sans-serif;
+    font-size:15px ;
+    margin-right: 70px;
+    margin-left: 30px;
+    
+}
+
+
+input{
+    display: none;
+}
+input:checked + label {
+    background-color: #F2C078;
+}
+
+#seleccionar-ataque{
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+}
+.boton-de-ataque{
+   color:#73946B;
+   padding: 15px;
+   box-sizing: border-box;
+   border-radius: 15px;
+   font-family: "Turret Road", sans-serif;
+   width: 80%;
+   max-width: 200px;
+   gap:10px;
+   align-items: center;
+   margin-bottom: 10px;
+   
+}
+#mensajes{
+    width: 280px;
+    background: #ffa500;
+    padding:15px;
+    margin-top: 20px;
+    border-radius: 16px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    color:#ff6200;
+}
+#boton-reiniciar{
+    border:black;
+    color: blue;
+    font-family: "Turret Road", sans-serif;
+    font-size: 20px;
+    background-color: #ffa500;
+
+}
+.ataques{
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
+#vidas-jugador, #vidas-enemigo{
+    font-size: 32px;
+    margin-bottom: 0;
+}
+.ataques-jugador, .ataques-enemigo{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+@media (max-width: 360px){
+    .tarjetas, .tarjetas-ataques{
+        flex-direction: column;
+    }
+}

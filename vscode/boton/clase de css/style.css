@@ -1,0 +1,16 @@
+p { 
+ color:cadetblue;
+ font-size: 50px;
+}
+ /*class*/
+
+.parrafo1{
+    color:rgb(116, 230, 2);
+    font-size: 60px;
+}
+
+/*id*/
+#texto2{
+    color:blue;
+    font-size: 50px
+}

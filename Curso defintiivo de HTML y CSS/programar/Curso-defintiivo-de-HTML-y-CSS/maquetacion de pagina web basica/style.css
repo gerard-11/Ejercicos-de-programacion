@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;}
+
+body{
+  
+    display: flex;
+    font-size: 2rem;
+
+}
+
+h1{
+    background-color: lightsalmon;
+    margin: 10px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    padding: 8px;
+    border-radius: 8px;
+
+}
+section{
+    display: grid;
+    background-color: blue;
+    grid-template-columns: repeat(3, 1fr) ;
+}
+aside{
+    margin-top: 85px;
+    margin-left: -70px;
+}
+.block{
+    border: 2px dotted;
+    border-color: black;
+    background-color: red;
+    display: block;
+    width: 110px;
+    height: 100px;
+    margin-top: 30px;
+
+
+
+
+}
+.menu li{
+    display: flex;
+    display: inline-flex;
+    background-color: lightskyblue;
+    position:relative;
+    margin: 10px;
+    text-align: center;
+    position: relative;
+    
+}
+
+main{
+    width: 400px;
+    height: 400px;
+    margin: 114px 0 0 0;
+    background-color: aquamarine;
+}

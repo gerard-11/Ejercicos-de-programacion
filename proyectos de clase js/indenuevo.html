@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>// Declarar las dos listas
+        const contactosFamilia = [];
+        const contactosTrabajo = [];
+        
+        // Variable que guarda la lista actual en uso
+        let listaActual;
+        
+        // Función para seleccionar con qué lista trabajar
+        function seleccionarLista() {
+          const opcion = prompt(
+            "¿Con qué lista quieres trabajar?\n1. Familia\n2. Trabajo"
+          );
+        
+          if (opcion === "1") {
+            listaActual = contactosFamilia;
+            alert("Trabajando con lista de Familia");
+          } else if (opcion === "2") {
+            listaActual = contactosTrabajo;
+            alert("Trabajando con lista de Trabajo");
+          } else {
+            alert("Opción inválida. Se seleccionará Familia por defecto.");
+            listaActual = contactosFamilia;
+          }
+        }
+        
+        // Función para agregar contacto
+        function agregarContacto() {
+          const nombre = prompt("Ingresa el nombre del contacto:");
+          const telefono = prompt("Ingresa el número de teléfono:");
+          
+          const nuevoContacto = {
+            nombre: nombre,
+            telefono: telefono
+          };
+        
+          listaActual.push(nuevoContacto);
+          alert("Contacto agregado exitosamente.");
+        }
+        
+        // Función para listar contactos
+        function listarContactos() {
+          if (listaActual.length === 0) {
+           alert("No hay contactos en esta lista.");
+            return;
+          }
+        
+          alert("Lista de contactos:");
+          listaActual.forEach((contacto, index) => {
+           alert(`${index + 1}. ${contacto.nombre} - ${contacto.telefono}`);
+          });
+        }
+        
+        // Función para eliminar contacto
+        function eliminarContacto() {
+          listarContactos(); // Primero mostramos los contactos
+        
+          const indice = prompt("Ingresa el número del contacto que deseas eliminar:");
+          const index = parseInt(indice) - 1;
+        
+          if (!isNaN(index) && index >= 0 && index < listaActual.length) {
+            const eliminado = listaActual.splice(index, 1);
+            console.log(`Se eliminó a ${eliminado[0].nombre} de la lista.`);
+          } else {
+            console.log("Índice inválido.");
+          }
+        }
+        
+        // Función principal para mostrar el menú
+        function mostrarMenu() {
+          let salir = false;
+        
+          while (!salir) {
+            const opcion = prompt(
+              "¿Qué deseas hacer?\n1. Agregar contacto\n2. Eliminar contacto\n3. Listar contactos\n4. Cambiar de lista\n5. Salir"
+            );
+        
+            switch (opcion) {
+              case "1":
+                agregarContacto();
+                break;
+              case "2":
+                eliminarContacto();
+                break;
+              case "3":
+                listarContactos();
+                break;
+              case "4":
+                seleccionarLista();
+                break;
+              case "5":
+                salir = true;
+                alert("¡Hasta luego!");
+                break;
+              default:
+                alert("Opción inválida, intenta de nuevo.");
+            }
+          }
+        }
+        
+        seleccionarLista(); // Primero preguntamos con qué lista trabajar
+        mostrarMenu(); 
+</script>
+    
+</body>
+</html>

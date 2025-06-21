@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+
+header{
+    background-color: lightsalmon;
+    font-size: 5rem;
+    color:yellowgreen;
+    text-align: center;
+    
+    
+}
+.layout{
+    display:flex;
+    min-height: 80vh;
+    
+}
+aside{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+.boxes{
+    background-color: blue;
+    flex:1;
+    font-size: 5rem;
+    align-items: center;
+    padding: 3rem;
+    width: 25vw;
+    border-style: dotted;
+    margin:.5rem;
+    
+ 
+
+    
+}
+
+.content{
+    background-color: black;
+    width: 75%;
+      margin:.5rem;
+   
+}
+
+footer{
+    background-color: blueviolet;
+    font-size: 3rem;
+    text-align: center;
+    min-height: 10vh;
+    padding-top: 1rem;
+}
